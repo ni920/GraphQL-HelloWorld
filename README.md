@@ -22,7 +22,7 @@ gradle bootRun
 ```
 Sollte der Port bereits belegt sein kann dieser in `src/main/resources/application.properties` geändert werden.
 
-Standardmäßig ist der Port `8090`.
+Standardmäßig lautet der Port `8090`.
 
 ---
 
