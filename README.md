@@ -36,7 +36,7 @@ Standardmäßig ist der Port `8090`.
 
 + Adresse für die Abfrage: http://localhost:8090/graphql
 
-Test Query:
+**Test Query**:
 ```
 {
   bookById(id: "book-1") {
@@ -47,7 +47,7 @@ Test Query:
 }
 ```
 
-Ausgabe: 
+**Ausgabe**: 
 ```
 {
   "data": {
