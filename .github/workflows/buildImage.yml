@@ -1,6 +1,6 @@
 # This workflow will build a Docker container
 
-name: uebung02 Image
+name: DockerImage
 
 on:
   workflow_dispatch
