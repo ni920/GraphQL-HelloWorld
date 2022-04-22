@@ -73,3 +73,39 @@ Diese befindet sich im Ordner `src/main/resources`.
 
 Die Daten werden aktuell in der Klasse `GraphQLDataFetchers` angelegt.
 
+
+--- 
+
+### Docker:
+
+Die Docker-Images werden durch das Gradle Jib Plugin erstellt.
+
+#### Lokales erstellen eines Docker Images:
+
+**Vorraussetzung**:
++ Docker ist installiert
++ Docker Desktop ist am lausten
+
+```
+gradle jibDockerBuild
+```
+
+Das Docker Image wird daraufhin gebaut und kann via 
+cli gestartet werden.
+
+#### Automatische Docker Image Builds:
+
+Das bauen der Docker Images kann optional über eine 
+GitHub Action erfolgen. 
+Hierbei wird ein Image erstellt und automatisch in die 
+GitHub Registry gepusht.
+
+#### Starten des Docker Images:
+
+Das Docker Image kann über die Compose Datei gestartet werden.
+
+Hier für folgenden Befehl im Ordner der Datei ausführen:
+
+```
+docker-compose up
+```
