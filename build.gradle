@@ -36,7 +36,7 @@ jib {
 		image = 'adoptopenjdk/openjdk11:jre-11.0.8_10-alpine'
 	}
 	to {
-		image = 'ni920/graphql-helloworld/0.0.1'
+		image = 'ghcr.io/ni920/GraphQL-HelloWorld/graphqlhelloworld:0.0.3'
 		credHelper = 'osxkeychain'
 		tags = ['latest']
 		//containerizingMode = 'packaged'
