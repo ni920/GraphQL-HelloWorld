@@ -33,18 +33,18 @@ tasks.named('test') {
 
 jib {
 	from {
-		image = 'openjdk:alpine'
+		image = 'adoptopenjdk/openjdk11:jre-11.0.8_10-alpine'
 	}
 	to {
 		image = 'ni920/graphql-helloworld/0.0.1'
 		credHelper = 'osxkeychain'
 		tags = ['latest']
-		containerizingMode = 'packaged'
+		//containerizingMode = 'packaged'
 
 	}
 	container {
 		//jvmFlags = ['-Dmy.property=example.value', '-Xms512m', '-Xdebug']
-		//mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
+		mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
 		ports = ['8090']
 		format = 'OCI'
 		creationTime = 'USE_CURRENT_TIMESTAMP'
