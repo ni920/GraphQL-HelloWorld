@@ -37,7 +37,7 @@ jib {
 	}
 	to {
 		image = 'ghcr.io/ni920/graphql-helloworld/graphqlhelloworld:0.0.3'
-		credHelper = 'osxkeychain'
+		//credHelper = 'osxkeychain'
 		tags = ['latest']
 		//containerizingMode = 'packaged'
 
