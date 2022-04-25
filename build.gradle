@@ -5,7 +5,7 @@ plugins {
 	id 'com.google.cloud.tools.jib' version '3.2.1'
 }
 
-group = 'om.graphql-java.tutorial'
+group = 'com.graphql-java.tutorial'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -21,6 +21,7 @@ dependencies {
 	implementation 'com.google.guava:guava:31.1-jre' // NEW
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
 }
 
 springBoot {
