@@ -21,7 +21,7 @@ dependencies {
 	implementation 'com.google.guava:guava:31.1-jre' // NEW
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
+	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2' // Weboberfläche GraphiQL
 }
 
 springBoot {
@@ -32,6 +32,8 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+
+// Docker Image Build
 jib {
 	from {
 		image = 'adoptopenjdk/openjdk11:jre-11.0.8_10-alpine'
