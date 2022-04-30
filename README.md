@@ -39,10 +39,12 @@ Standardmäßig lautet der Port `8090`.
 **Test Query**:
 ```
 {
-  bookById(id: "book-1") {
-    id
-    name
-    pageCount
+  definitionByID(id: "1") {
+    term
+    definition
+  }
+  definitionByTerm(term: "Erbstatut"){
+    definition
   }
 }
 ```
@@ -51,10 +53,12 @@ Standardmäßig lautet der Port `8090`.
 ```
 {
   "data": {
-    "bookById": {
-      "id": "book-1",
-      "name": "Harry Potter und der Orden des Phönix",
-      "pageCount": 544
+    "definitionByID": {
+      "term": "Erbstatut",
+      "definition": "Das auf die Form des Rechtsgeschäfts anwendbare Recht"
+    },
+    "definitionByTerm": {
+      "definition": "Das auf die Form des Rechtsgeschäfts anwendbare Recht"
     }
   }
 }

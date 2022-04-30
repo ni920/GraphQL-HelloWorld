@@ -11,51 +11,43 @@ import java.util.Map;
 @Component
 public class GraphQLDataFetchers {
 
-    private static List<Map<String, String>> books = Arrays.asList(
-            ImmutableMap.of("id", "book-1",
-                    "name", "Harry Potter and the Philosopher's Stone",
-                    "pageCount", "223",
-                    "authorId", "author-1"),
-            ImmutableMap.of("id", "book-2",
-                    "name", "Moby Dick",
-                    "pageCount", "635",
-                    "authorId", "author-2"),
-            ImmutableMap.of("id", "book-3",
-                    "name", "Interview with the vampire",
-                    "pageCount", "371",
-                    "authorId", "author-3")
+    private static final List<Map<String, String>> glossar = Arrays.asList(
+            ImmutableMap.of(
+                    "id", "1",
+                    "term", "Erbstatut",
+                    "definition", "Das auf die Form des Rechtsgeschäfts anwendbare Recht"),
+            ImmutableMap.of(
+                    "id", "2",
+                    "term", "Rest",
+                    "definition", "Schnittstelle zum kommunikativen Austausch von Daten über Rest"),
+            ImmutableMap.of(
+                    "id", "3",
+                    "term", "GraphQL",
+                    "definition", "Ein GraphQL-Server ist ein Webserver, der die REST-Schnittstelle zum Austausch von Daten über GraphQL erweitert"),
+            ImmutableMap.of(
+                    "id", "4",
+                    "term", "MPEG",
+                    "definition", "Moving Picture Experts Group")
     );
 
-    private static List<Map<String, String>> authors = Arrays.asList(
-            ImmutableMap.of("id", "author-1",
-                    "firstName", "Joanne",
-                    "lastName", "Rowling"),
-            ImmutableMap.of("id", "author-2",
-                    "firstName", "Herman",
-                    "lastName", "Melville"),
-            ImmutableMap.of("id", "author-3",
-                    "firstName", "Anne",
-                    "lastName", "Rice")
-    );
 
-    public DataFetcher getBookByIdDataFetcher() {
+    public DataFetcher getDefinitionByID() {
         return dataFetchingEnvironment -> {
-            String bookId = dataFetchingEnvironment.getArgument("id");
-            return books
+            String glossarID = dataFetchingEnvironment.getArgument("id");
+            return glossar
                     .stream()
-                    .filter(book -> book.get("id").equals(bookId))
+                    .filter(entry -> entry.get("id").equals(glossarID))
                     .findFirst()
                     .orElse(null);
         };
     }
 
-    public DataFetcher getAuthorDataFetcher() {
-        return dataFetchingEnvironment -> {
-            Map<String, String> book = dataFetchingEnvironment.getSource();
-            String authorId = book.get("authorId");
-            return authors
+    public DataFetcher getDefinitionByTerm() {
+        return dataFetchingEnvironment-> {
+            String glossarTerm = dataFetchingEnvironment.getArgument("term");
+            return glossar
                     .stream()
-                    .filter(author -> author.get("id").equals(authorId))
+                    .filter(entry -> entry.get("term").equals(glossarTerm))
                     .findFirst()
                     .orElse(null);
         };

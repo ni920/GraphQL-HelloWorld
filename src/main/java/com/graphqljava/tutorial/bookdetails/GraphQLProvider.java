@@ -21,7 +21,6 @@ import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
 @Component
 public class GraphQLProvider {
 
-
     @Autowired
     GraphQLDataFetchers graphQLDataFetchers;
 
@@ -29,9 +28,13 @@ public class GraphQLProvider {
 
     @PostConstruct
     public void init() throws IOException {
+        // Definieren des GraphQL-Schemas
         URL url = Resources.getResource("schema.graphql");
+        // Decodieren des Schemas
         String sdl = Resources.toString(url, Charsets.UTF_8);
+        // Erzeugen des Schemas
         GraphQLSchema graphQLSchema = buildSchema(sdl);
+        // Erzeugen des GraphQL-Objekts
         this.graphQL = GraphQL.newGraphQL(graphQLSchema).build();
     }
 
@@ -45,9 +48,9 @@ public class GraphQLProvider {
     private RuntimeWiring buildWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type(newTypeWiring("Query")
-                        .dataFetcher("bookById", graphQLDataFetchers.getBookByIdDataFetcher()))
-                .type(newTypeWiring("Book")
-                        .dataFetcher("author", graphQLDataFetchers.getAuthorDataFetcher()))
+                        .dataFetcher("definitionByID", graphQLDataFetchers.getDefinitionByID()))
+                .type(newTypeWiring("Query")
+                        .dataFetcher("definitionByTerm", graphQLDataFetchers.getDefinitionByTerm()))
                 .build();
     }
 

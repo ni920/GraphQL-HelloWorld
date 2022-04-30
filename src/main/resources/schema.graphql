@@ -1,16 +1,11 @@
 type Query {
-    bookById(id: ID): Book
+    definitionByID(id: ID): Glossar
+    definitionByTerm(term: String): Glossar
 }
 
-type Book {
+type Glossar {
     id: ID
-    name: String
-    pageCount: Int
-    author: Author
+    definition: String
+    term: String
 }
 
-type Author {
-    id: ID
-    firstName: String
-    lastName: String
-}
