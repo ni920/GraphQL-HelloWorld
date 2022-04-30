@@ -1,6 +1,6 @@
 version: '3.6'
 services:
   graphql:
-    image: ghcr.io/ni920/graphql-helloworld/graphqlhelloworld:0.1.0
+    image: ghcr.io/ni920/graphql-helloworld/graphqlhelloworld:latest
     ports:
       - "8090:8090"
