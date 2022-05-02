@@ -1,7 +1,7 @@
 [![Java Build](https://github.com/ni920/GraphQL-HelloWorld/actions/workflows/gradle.yml/badge.svg)](https://github.com/ni920/GraphQL-HelloWorld/actions/workflows/gradle.yml)
 [![Build DockerImage](https://github.com/ni920/GraphQL-HelloWorld/actions/workflows/buildImage.yml/badge.svg)](https://github.com/ni920/GraphQL-HelloWorld/actions/workflows/buildImage.yml)
 
-# GraphQL-HelloWorld
+# GraphQL-HelloWorld-Glossar
 
 - [GraphQL-HelloWorld](#graphql-helloworld)
     - [Bauen des Projekts:](#bauen-des-projekts)
