@@ -26,25 +26,28 @@ public class GraphQLProvider {
 
     private GraphQL graphQL;
 
+    // Initialisierung des GraphQL-Servers
     @PostConstruct
     public void init() throws IOException {
         // Definieren des GraphQL-Schemas
         URL url = Resources.getResource("schema.graphql");
         // Decodieren des Schemas
-        String sdl = Resources.toString(url, Charsets.UTF_8);
+        String decodiertesSchema = Resources.toString(url, Charsets.UTF_8);
         // Erzeugen des Schemas
-        GraphQLSchema graphQLSchema = buildSchema(sdl);
+        GraphQLSchema graphQLSchema = buildSchema(decodiertesSchema);
         // Erzeugen des GraphQL-Objekts
         this.graphQL = GraphQL.newGraphQL(graphQLSchema).build();
     }
 
-    private GraphQLSchema buildSchema(String sdl) {
-        TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(sdl);
+    // Baue das Schema aus dem GraphQL String
+    private GraphQLSchema buildSchema(String decodiertesSchema) {
+        TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(decodiertesSchema);
         RuntimeWiring runtimeWiring = buildWiring();
         SchemaGenerator schemaGenerator = new SchemaGenerator();
         return schemaGenerator.makeExecutableSchema(typeRegistry, runtimeWiring);
     }
 
+    // Definieren der Querys in diesem Hello-World 2-Stück
     private RuntimeWiring buildWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type(newTypeWiring("Query")

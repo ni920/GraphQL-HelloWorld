@@ -11,6 +11,8 @@ import java.util.Map;
 @Component
 public class GraphQLDataFetchers {
 
+
+    // Array Liste welche in diesem Hello-World als Datenquelle fungiert.
     private static final List<Map<String, String>> glossar = Arrays.asList(
             ImmutableMap.of(
                     "id", "1",
@@ -31,6 +33,7 @@ public class GraphQLDataFetchers {
     );
 
 
+    // get Methode für Query
     public DataFetcher getDefinitionByID() {
         return dataFetchingEnvironment -> {
             String glossarID = dataFetchingEnvironment.getArgument("id");
@@ -42,6 +45,7 @@ public class GraphQLDataFetchers {
         };
     }
 
+    // get Methode für Query
     public DataFetcher getDefinitionByTerm() {
         return dataFetchingEnvironment-> {
             String glossarTerm = dataFetchingEnvironment.getArgument("term");
