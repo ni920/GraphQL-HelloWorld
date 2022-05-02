@@ -30,11 +30,16 @@ Standardmäßig lautet der Port `8090`.
 + Tools die genutzt werden können:
   + GraphQL Playground (https://github.com/graphql/graphql-playground)
   + Postman (https://www.postman.com/downloads/)
+  + GraphiQL (https://github.com/graphql/graphiql)
   
 
-+ Hier genutzt `graphql-playground`:
++ Für `graphql-playground` folgenden Link verwenden:
 
-+ Adresse für die Abfrage: http://localhost:8090/graphql
+  + http://localhost:8090/graphql
+
++ `GraphIQL` kann im Web-Browser aufgerufen werden:
+
+  + http://localhost:8090/graphiql
 
 **Test Query**:
 ```
