@@ -25,7 +25,7 @@ dependencies {
 }
 
 springBoot {
-	mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
+	mainClass = 'com.graphqljava.tutorial.glossardetails.GlossarDetailsApplication'
 }
 
 tasks.named('test') {
@@ -47,7 +47,7 @@ jib {
 	}
 	container {
 		//jvmFlags = ['-Dmy.property=example.value', '-Xms512m', '-Xdebug']
-		mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
+		mainClass = 'com.graphqljava.tutorial.glossardetails.GlossarDetailsApplication'
 		ports = ['8090']
 		format = 'OCI'
 		creationTime = 'USE_CURRENT_TIMESTAMP'

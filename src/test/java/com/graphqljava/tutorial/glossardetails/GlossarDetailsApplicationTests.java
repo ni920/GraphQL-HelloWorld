@@ -1,13 +1,14 @@
-package com.graphqljava.tutorial.bookdetails;
+package com.graphqljava.tutorial.glossardetails;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookDetailsApplicationTests {
+class GlossarDetailsApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

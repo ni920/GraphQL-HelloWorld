@@ -1,14 +1,14 @@
 
-package com.graphqljava.tutorial.bookdetails;
+package com.graphqljava.tutorial.glossardetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BookDetailsApplication {
+public class GlossarDetailsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookDetailsApplication.class, args);
+		SpringApplication.run(GlossarDetailsApplication.class, args);
 	}
 
 }
