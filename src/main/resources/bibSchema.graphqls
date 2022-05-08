@@ -1,0 +1,14 @@
+type Query {
+    hello: String!
+
+}
+
+type Mutation {
+    newAuthor(name: String!, vorname: String!): Author!
+}
+
+type Author {
+    id: ID!
+    name: String!
+    vorname: String!
+}

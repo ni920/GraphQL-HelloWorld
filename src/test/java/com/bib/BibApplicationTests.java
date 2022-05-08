@@ -1,10 +1,10 @@
-package com.graphqljava.tutorial.bookdetails;
+package com.bib;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookDetailsApplicationTests {
+class BibApplicationTests {
 
 	@Test
 	void contextLoads() {

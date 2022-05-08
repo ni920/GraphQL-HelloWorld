@@ -1,56 +1,44 @@
 plugins {
-	id 'org.springframework.boot' version '2.6.7'
+	id 'org.springframework.boot' version '2.7.0-RC1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id 'com.google.cloud.tools.jib' version '3.2.1'
 }
 
-group = 'com.graphql-java.tutorial'
+group = 'com'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'com.graphql-java:graphql-java:18.0' // NEW
-	implementation 'com.graphql-java:graphql-java-spring-boot-starter-webmvc:2.0' // NEW
-	implementation 'com.google.guava:guava:31.1-jre' // NEW
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2' // Weboberfläche GraphiQL
-}
 
-springBoot {
-	mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0'
+	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	testImplementation 'org.springframework.graphql:spring-graphql-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework:spring-webflux'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-
-// Docker Image Build
-jib {
-	from {
-		image = 'adoptopenjdk/openjdk11:jre-11.0.8_10-alpine'
-	}
-	to {
-		image = 'ghcr.io/ni920/graphql-helloworld/graphqlhelloworld:0.0.3'
-		//credHelper = 'osxkeychain'
-		tags = ['latest']
-		//containerizingMode = 'packaged'
-
-	}
-	container {
-		//jvmFlags = ['-Dmy.property=example.value', '-Xms512m', '-Xdebug']
-		mainClass = 'com.graphqljava.tutorial.bookdetails.BookDetailsApplication'
-		ports = ['8090']
-		format = 'OCI'
-		creationTime = 'USE_CURRENT_TIMESTAMP'
-
-	}
 }
