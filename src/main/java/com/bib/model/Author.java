@@ -33,6 +33,10 @@ public class Author {
         
     }
 
+    public Author(Integer id){
+        this.id = id;
+    }
+
     @Override
     public String toString(){
         return "Authro{" + 

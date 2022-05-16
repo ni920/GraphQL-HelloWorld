@@ -1,20 +1,37 @@
-type Query {
+extend type Query {
     # hello: String!
     findAllAuthors: [Author]!
     findById(id: ID!): Author
     
 }
 
-type Mutation {
+#Mutation Author
+extend type Mutation {
     newAuthor(name: String!, vorname: String!): Author!
-    # updateAuthor(id: ID!, name: String!, vorname: String!, authorId: ID!): Author
+    updateAuthorName(id: ID!, name: String!): Author
+    updateAuthorVorName(id: ID!, vorname: String!): Author
+    updateAuthorNameAndVorName(id: ID!, name: String!, vorname: String!): Author
+    deleteAuthor(id: ID!): Boolean!
+
+    
+}
+
+# #Query Book
+# type Query {
+
+# }
+
+#Mutation Book
+extend type Mutation {
+    newBook(titel: String!, authorId: ID!): Book!
+
 }
 
 
 type Book { 
     id: ID!
     titel: String!
-    author: Author
+    author: Author!
 }
 
 type Author {
@@ -23,3 +40,6 @@ type Author {
     vorname: String!
     # books: [Book]
 }
+
+type Query { }
+type Mutation { }
