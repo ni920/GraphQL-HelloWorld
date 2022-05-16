@@ -1,14 +1,25 @@
 type Query {
-    hello: String!
-
+    # hello: String!
+    findAllAuthors: [Author]!
+    findById(id: ID!): Author
+    
 }
 
 type Mutation {
     newAuthor(name: String!, vorname: String!): Author!
+    # updateAuthor(id: ID!, name: String!, vorname: String!, authorId: ID!): Author
+}
+
+
+type Book { 
+    id: ID!
+    titel: String!
+    author: Author
 }
 
 type Author {
     id: ID!
     name: String!
     vorname: String!
+    # books: [Book]
 }

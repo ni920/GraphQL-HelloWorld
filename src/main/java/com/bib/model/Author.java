@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.GeneratorType;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,5 +31,14 @@ public class Author {
         this.name = name;
         this.vorname = vorname;
         
+    }
+
+    @Override
+    public String toString(){
+        return "Authro{" + 
+                "Id: " + id + ", " +
+                "Name: " + name + ", " + 
+                "Vorname: " + vorname +
+                "}"; 
     }
 }

@@ -1,6 +1,5 @@
 package com.bib.resolver;
 
-import javax.annotation.PostConstruct;
 
 import com.bib.model.Author;
 import com.bib.repository.AuthorRepository;
