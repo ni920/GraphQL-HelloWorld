@@ -1,7 +1,7 @@
 extend type Query {
     # hello: String!
     findAllAuthors: [Author]!
-    findById(id: ID!): Author
+    findAuthorById(id: ID!): Author
     
 }
 
@@ -16,14 +16,18 @@ extend type Mutation {
     
 }
 
-# #Query Book
-# type Query {
-
-# }
+#Query Book
+extend type Query {
+    findAllBooks: [Book]!
+    findBookById(id: ID!): Book
+    
+}
 
 #Mutation Book
 extend type Mutation {
     newBook(titel: String!, authorId: ID!): Book!
+    updateBook(id: ID!, titel: String!): Book!
+    deleteBook(id: ID!): Boolean!
 
 }
 

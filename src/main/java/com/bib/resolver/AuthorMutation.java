@@ -3,6 +3,8 @@ package com.bib.resolver;
 
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.bib.exception.AuthorNotFoundException;
 import com.bib.model.Author;
 import com.bib.repository.AuthorRepository;
@@ -70,7 +72,6 @@ public class AuthorMutation implements GraphQLMutationResolver {
     }
 
    
-
     public Boolean deleteAuthor(Integer id){
         Optional<Author> opt = authorRepository.findById(id);
         if(opt != null){
