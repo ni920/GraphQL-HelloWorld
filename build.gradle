@@ -22,6 +22,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2' // Weboberfläche GraphiQL
+
+	testImplementation 'org.springframework.graphql:spring-graphql-test'
 }
 
 springBoot {
