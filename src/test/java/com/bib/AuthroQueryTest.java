@@ -85,7 +85,7 @@ public class AuthroQueryTest {
 		
 
 		ResultActions request =  mockMvc.perform(MockMvcRequestBuilders.post(GRAPHQL_PATH)
-				.content("{\"query\":\"{ findAllAuthors { id name vorname }}\"}")
+				// .content("{\"query\":\"{ findAllAuthors { id name vorname }}\"}")
 				.content(toJSON(query))
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON))
