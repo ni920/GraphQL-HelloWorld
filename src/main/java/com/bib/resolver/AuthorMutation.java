@@ -26,7 +26,7 @@ public class AuthorMutation implements GraphQLMutationResolver {
 
     public Author newAuthor(String name, String vorname){
         Author author = new Author(name, vorname);
-        this.authorRepository.save(author);
+        authorRepository.save(author);
         return author;
     }
 

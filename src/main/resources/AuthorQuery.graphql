@@ -1,0 +1,8 @@
+query{ 
+    findAllAuthors
+    { 
+        id 
+        name 
+        vorname 
+    }
+}

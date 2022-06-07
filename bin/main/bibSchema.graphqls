@@ -1,5 +1,6 @@
+#Query Author
 extend type Query {
-    # hello: String!
+    
     findAllAuthors: [Author]!
     findAuthorById(id: ID!): Author
     
