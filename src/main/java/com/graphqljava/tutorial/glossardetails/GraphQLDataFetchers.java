@@ -17,7 +17,7 @@ public class GraphQLDataFetchers {
             ImmutableMap.of(
                     "id", "1",
                     "term", "Erbstatut",
-                    "definition", "Das auf die Form des Rechtsgeschäfts anwendbare Recht"),
+                    "definition", "Das auf die Form des Rechtsgeschaefts anwendbare Recht"),
             ImmutableMap.of(
                     "id", "2",
                     "term", "Rest",
@@ -35,7 +35,7 @@ public class GraphQLDataFetchers {
 
     // get Methode für Query
     public DataFetcher getDefinitionByID() {
-        return dataFetchingEnvironment -> {
+         return dataFetchingEnvironment -> {
             String glossarID = dataFetchingEnvironment.getArgument("id");
             return glossar
                     .stream()
