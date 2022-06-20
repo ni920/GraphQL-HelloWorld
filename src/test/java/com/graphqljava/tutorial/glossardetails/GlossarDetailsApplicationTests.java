@@ -2,7 +2,6 @@ package com.graphqljava.tutorial.glossardetails;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultHandler;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -40,7 +38,7 @@ class GlossarDetailsApplicationTests {
     @Test
     void contextLoads() throws Exception {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-        String excpectedRpns = "{\"data\":{\"definitionByID\":{\"id\":\"1\",\"definition\":\"Das auf die Form des Rechtsgeschaefts anwendbare Recht\"}}}";
+        String expectedRpns = "{\"data\":{\"definitionByID\":{\"id\":\"1\",\"definition\":\"Das auf die Form des Rechtsgeschaefts anwendbare Recht\"}}}";
 
         String query = "{definitionByID(id:1){ id definition } }";
 
@@ -52,7 +50,7 @@ class GlossarDetailsApplicationTests {
                 .andReturn();
 
         mockMvc.perform(MockMvcRequestBuilders.asyncDispatch(mvcResult))
-                .andExpect(content().json(excpectedRpns));
+                .andExpect(content().json(expectedRpns));
 
 
     }
