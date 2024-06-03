@@ -19,7 +19,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'com.graphql-java:graphql-java:22.1' // NEW
 	implementation 'com.graphql-java:graphql-java-spring-boot-starter-webmvc:2.0' // NEW
-	implementation 'com.google.guava:guava:33.2.0-jre' // NEW
+	implementation 'com.google.guava:guava:33.2.1-jre' // NEW
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2' // Weboberfläche GraphiQL
